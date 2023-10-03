@@ -1,12 +1,13 @@
+const rectangleAreaFromCoords = require("../medium/rectangleAreaFromCoords.js");
 /*
  * This is intended to be a challenge for any squad who gets finished with everything else.
  * If you haven't done the other challenges, try those first!
- * 
+ *
  * Imagine you have two rectangles with horizontal bases. If you draw them on the same grid,
  * they would overlap! Each rectangle is described by an array of coordinates, for example:
  * [{ x: 0, y: 0 }, { x: 1, y: 0 }, { x: 1, y: 1 }, { x: 0, y: 1 }]
  * Can you write a function which calculates the area of the overlap between two rectangles?
- * 
+ *
  */
 
 /**
@@ -15,8 +16,10 @@
  * @param {{x: number, y: number}[]} rectangle1 - The four corners of rectangle 1
  * @param {{x: number, y: number}[]} rectangle2 - The four corners of rectangle 2
  */
-function rectangleOverlap (rectangle1, rectangle2) {
-  // idk tbh :/
+function rectangleOverlap(rectangle1, rectangle2) {
+  return (
+    rectangleAreaFromCoords(rectangle1) / rectangleAreaFromCoords(rectangle2)
+  );
 }
 
-module.exports = rectangleOverlap
+module.exports = rectangleOverlap;
