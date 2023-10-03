@@ -7,10 +7,15 @@
  */
 
 function rectangleAreaFromCoords(points) {
-  const [A, B, C, D] = points;
-  //const [A, B, C, D] = points;
-  //console.log(points.A.x);
-  return (A.x - B.x) * (C.y - D.y);
+  [A, B, C, D] = points;
+  // weird formula I made up:
+  //  A: 0
+  //  B: 1
+  //  C: 2
+  //  D: 3
+  // (D.x - B.x) * (D.y - A.y)
+  // then do Math.abs() to make poitive always
+  return Math.abs((points[3].x - points[1].x) * (points[3].y - points[0].y));
 }
 
 module.exports = rectangleAreaFromCoords;
